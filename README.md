@@ -1,41 +1,36 @@
-# Eunoia
+<p align="center">
+  <img src="web/public/favicon.png" alt="Eunoia" width="80" height="80" />
+</p>
 
-AI-powered mental health journal with sentiment analysis, mood tracking, and an empathetic AI chat companion.
+<h1 align="center">Eunoia</h1>
 
-Write your thoughts, and Eunoia analyzes their sentiment using AI — helping you track your emotional patterns over time with visual charts and personalized weekly insights.
+<p align="center">
+  Your AI-powered mental health journal — write freely, understand yourself deeply.
+</p>
 
-## Features
+---
 
-- **AI Journal** — Write freely, get instant sentiment analysis on every entry
-- **Per-Entry AI Analysis** — Deep emotional breakdown, root cause identification, triggers, and actionable suggestions for each entry
-- **Mood Tracking** — Pie charts and timeline visualizations of your emotional patterns
-- **AI Chat Companion** — Supportive, empathetic chat sidebar powered by Google Gemini
-- **Weekly Insights** — AI-generated analysis of your mood patterns with personalized tips
-- **Speech-to-Text** — Dictate journal entries using your voice (Chrome/Edge/Safari)
-- **File Upload** — Drop or upload .txt, .pdf, .csv, .md, .json, .tsv files as journal entries
-- **Onboarding** — Personalized setup to tailor your experience
-- **Dark Mode** — Easy on the eyes for late-night reflections
-- **Responsive** — Works on desktop and mobile
+Eunoia is an intelligent journaling platform that helps you understand your emotional patterns through AI. Write about your day, talk to a supportive AI companion, and watch your mood trends unfold over time — all in one place.
 
-## Tech Stack
+## What Eunoia Does
 
-- **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS 3
-- **Backend**: Next.js API Routes
-- **Database & Auth**: Supabase (PostgreSQL + Auth)
-- **AI**: Google Gemini API (`gemini-2.5-flash` with `gemini-2.0-flash` fallback) — sentiment analysis, chat, per-entry analysis, weekly insights
-- **File Parsing**: pdf-parse for PDF text extraction
-- **Speech**: Web Speech API (browser-native, no dependencies)
-- **Mobile**: Flutter (deferred to post-MVP)
+**Journal with AI insights** — Write your thoughts and Eunoia instantly analyzes the emotional tone of each entry, giving you a quick mood reading and a personalized insight to help you reflect.
+
+**Talk to an AI companion** — Open the chat sidebar anytime to have a supportive, judgment-free conversation. Eunoia listens, validates your feelings, and offers gentle coping strategies.
+
+**Track your mood over time** — Visual charts (pie chart + timeline) show how your emotions shift day to day, helping you spot patterns you might not notice on your own.
+
+**Get weekly reflections** — At the end of each week, generate a personalized analysis that summarizes your emotional patterns, identifies what you've been struggling with, and offers actionable tips.
+
+**Use your voice** — Don't feel like typing? Dictate your journal entries using speech-to-text.
+
+**Import documents** — Drop a PDF, text file, or CSV into the journal to analyze its emotional tone — useful for essays, survey responses, or any written content.
+
+## Built With
+
+Next.js | React | Tailwind CSS | Google Gemini AI | Supabase
 
 ## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- A [Google AI Studio](https://aistudio.google.com/apikey) API key (free)
-- Optionally: a [Supabase](https://supabase.com) project (app works in demo mode without it)
-
-### 1. Install & Run
 
 ```bash
 cd web
@@ -43,61 +38,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+The app works out of the box in **demo mode** — no accounts or API keys needed. Sign in with any email and password to explore all features.
 
-The app runs in **demo mode** by default — sign in with any email/password. Entries are stored in memory.
-
-### 2. Add Google Gemini (optional but recommended)
-
-Get a free API key from [Google AI Studio](https://aistudio.google.com/apikey), then edit `web/.env.local`:
+To enable real AI analysis, add a free [Google Gemini API key](https://aistudio.google.com/apikey) to `web/.env.local`:
 
 ```
 GOOGLE_GEMINI_API_KEY=your_key_here
 ```
-
-This enables real AI sentiment analysis, chat, per-entry analysis, and weekly insights. The app uses `gemini-2.5-flash` as the primary model with automatic fallback to `gemini-2.0-flash` and exponential backoff retry on rate limits.
-
-### 3. Set Up Supabase (optional, for persistence)
-
-Create a Supabase project, then:
-1. Run `supabase-migration.sql` in the Supabase SQL Editor
-2. Update `web/.env.local`:
-
-```
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-```
-
-## Project Structure
-
-```
-eunoia/
-├── web/                        # Next.js app
-│   ├── src/
-│   │   ├── app/                # Pages and API routes
-│   │   │   ├── page.js         # Public landing page
-│   │   │   ├── auth/           # Sign in / sign up
-│   │   │   ├── journal/        # Dashboard with entries, mood charts, chat
-│   │   │   └── api/            # sentiment, chat, analyze, insights, parse-file
-│   │   ├── components/         # React components
-│   │   │   ├── landing/        # Landing page sections
-│   │   │   └── ...             # Auth, journal, chat, mood, onboarding
-│   │   └── lib/                # Supabase clients, Gemini config, helpers
-│   └── public/                 # Static assets (favicon.jpg)
-├── mobile/                     # Flutter app (post-MVP)
-├── supabase-migration.sql      # Database schema
-└── CLAUDE.md                   # AI assistant guidance
-```
-
-## API Routes
-
-| Route | Method | Description |
-|-------|--------|-------------|
-| `/api/sentiment` | POST | Sentiment analysis (Gemini with keyword fallback) |
-| `/api/chat` | POST | AI chat companion (Gemini with demo fallback) |
-| `/api/analyze` | POST | Per-entry deep analysis (Gemini with template fallback) |
-| `/api/insights` | POST | Weekly mood insights (Gemini with template fallback) |
-| `/api/parse-file` | POST | File upload parsing (PDF, TXT, CSV, MD, JSON, TSV) |
 
 ## License
 
