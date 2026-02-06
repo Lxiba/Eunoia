@@ -141,28 +141,31 @@ export default function JournalEntry({ entry, onDeleted }) {
               Analyzing your entry...
             </div>
           ) : (
-            <div className="prose-sm text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+            <div className="space-y-2.5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               {analysis?.split('\n').filter(Boolean).map((line, i) => {
-                // Bold markdown-style headers
+                // Section headers like **Mood**: ... or **Tip**: ...
                 if (line.startsWith('**') && line.includes('**:')) {
                   const [header, ...rest] = line.split('**:');
+                  const body = rest.join('**:').trim();
                   return (
-                    <p key={i} className="mt-2 first:mt-0">
-                      <strong className="text-gray-900 dark:text-white">
-                        {header.replace(/\*\*/g, '')}:
-                      </strong>
-                      {rest.join('**:')}
-                    </p>
+                    <div key={i}>
+                      <span className="text-xs font-bold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">
+                        {header.replace(/\*\*/g, '')}
+                      </span>
+                      {body && (
+                        <p className="mt-0.5 text-gray-700 dark:text-gray-300">{body}</p>
+                      )}
+                    </div>
                   );
                 }
                 if (line.startsWith('• ') || line.startsWith('- ')) {
                   return (
-                    <p key={i} className="ml-3 mt-0.5">
-                      <span className="text-indigo-500 dark:text-indigo-400">&#8226;</span> {line.slice(2)}
+                    <p key={i} className="ml-3">
+                      <span className="text-indigo-500 dark:text-indigo-400">&#8226;</span> <span className="text-gray-700 dark:text-gray-300">{line.slice(2)}</span>
                     </p>
                   );
                 }
-                return <p key={i} className="mt-1.5 first:mt-0">{line}</p>;
+                return <p key={i} className="text-gray-700 dark:text-gray-300">{line}</p>;
               })}
             </div>
           )}

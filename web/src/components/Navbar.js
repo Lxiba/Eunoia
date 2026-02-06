@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { createClient } from '../lib/supabase';
 import ThemeToggle from './ThemeToggle';
 
@@ -14,7 +15,8 @@ export default function Navbar({ userEmail, chatToggle }) {
   return (
     <nav className="border-b border-gray-200 dark:border-gray-800" role="navigation" aria-label="Main navigation">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="text-xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400">
+        <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400">
+          <Image src="/favicon.png" alt="" width={28} height={28} className="rounded" />
           Eunoia
         </Link>
 

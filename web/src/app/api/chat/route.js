@@ -23,7 +23,29 @@ export async function POST(request) {
     }
 
     try {
-      const history = messages.slice(0, -1).map((msg) => ({
+      // Gemini requires history to start with a user message and alternate roles.
+      // Filter out leading assistant messages (like the welcome greeting) and
+      // ensure proper alternation.
+      const filtered = messages.slice(0, -1).filter((msg, i, arr) => {
+        // Skip assistant messages before the first user message
+        if (msg.role === 'assistant') {
+          const hasUserBefore = arr.slice(0, i).some((m) => m.role === 'user');
+          if (!hasUserBefore) return false;
+        }
+        return true;
+      });
+
+      // Collapse consecutive same-role messages
+      const deduped = [];
+      for (const msg of filtered) {
+        if (deduped.length > 0 && deduped[deduped.length - 1].role === msg.role) {
+          deduped[deduped.length - 1].content += '\n' + msg.content;
+        } else {
+          deduped.push({ ...msg });
+        }
+      }
+
+      const history = deduped.map((msg) => ({
         role: msg.role === 'assistant' ? 'model' : 'user',
         parts: [{ text: msg.content }],
       }));
