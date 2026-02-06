@@ -28,7 +28,28 @@ Eunoia is an intelligent journaling platform that helps you understand your emot
 
 ## Built With
 
-Next.js | React | Tailwind CSS | Google Gemini AI | Supabase
+### Languages
+| Language | Usage |
+|----------|-------|
+| **JavaScript (ES2024)** | Primary language for both frontend components and backend API routes |
+| **CSS** | Styling via Tailwind utility classes and custom animations |
+| **SQL** | Database schema, row-level security policies, and migration scripts for Supabase (PostgreSQL) |
+
+### Frontend
+| Technology | Usage |
+|------------|-------|
+| **React 19** | Component-based UI — journal entries, mood charts, chat sidebar, onboarding wizard |
+| **Next.js 15** | App Router for page routing, server-side rendering, and static page generation |
+| **Tailwind CSS 3** | Utility-first styling with dark mode support across all components |
+| **Web Speech API** | Browser-native speech-to-text for voice journaling (no external dependency) |
+
+### Backend
+| Technology | Usage |
+|------------|-------|
+| **Next.js API Routes** | Server-side endpoints for sentiment analysis, chat, entry analysis, weekly insights, and file parsing |
+| **Google Gemini AI** | Powers all AI features — sentiment detection, empathetic chat companion, per-entry mood insights, and weekly reflections |
+| **Supabase** | PostgreSQL database for journal storage, user authentication, and row-level security |
+| **pdf-parse** | Server-side PDF text extraction for document uploads |
 
 ## Getting Started
 
