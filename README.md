@@ -51,22 +51,6 @@ Eunoia is an intelligent journaling platform that helps you understand your emot
 | **Supabase** | PostgreSQL database for journal storage, user authentication, and row-level security |
 | **pdf-parse** | Server-side PDF text extraction for document uploads |
 
-## Getting Started
-
-```bash
-cd web
-npm install
-npm run dev
-```
-
-The app works out of the box in **demo mode** — no accounts or API keys needed. Sign in with any email and password to explore all features.
-
-To enable real AI analysis, add a free [Google Gemini API key](https://aistudio.google.com/apikey) to `web/.env.local`:
-
-```
-GOOGLE_GEMINI_API_KEY=your_key_here
-```
-
 ## License
 
 ISC

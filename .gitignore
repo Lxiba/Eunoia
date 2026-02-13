@@ -16,6 +16,6 @@ Thumbs.db
 *.swp
 *.swo
 
-# Claude Code
+# AI assistant config
 CLAUDE.md
 .claude/
