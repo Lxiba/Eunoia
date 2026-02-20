@@ -236,8 +236,6 @@ WeeklyInsights.js → POST /api/insights
   └── Gemini summarizes the week's entries → returns themed reflection
 ```
 
----
-
 ## AI & Reliability
 
 All AI features are powered by the Google Gemini API. Eunoia is built to stay functional even when the API is slow or rate-limited.
@@ -249,101 +247,6 @@ All AI features are powered by the Google Gemini API. Eunoia is built to stay fu
 **Graceful degradation**: If Gemini fails entirely, every API route falls back to a usable default — keyword-based sentiment for entries, pre-written empathetic responses for chat, and a static placeholder for weekly insights. The app never breaks for the user.
 
 **Response parsing**: Gemini responses are cleaned of markdown code fences and parsed as JSON, with a substring search to extract the JSON object even if the model adds extra surrounding text.
-
----
-
-## Demo Mode
-
-Eunoia can run fully offline without any external accounts. If the Supabase environment variables are left as placeholders, the app automatically switches into demo mode:
-
-- Any email and password will work for sign-in
-- Journal entries are stored in memory for the session (reset on page refresh)
-- Sentiment analysis falls back to keyword matching
-- The AI chat uses pre-written empathetic responses
-- All features — charts, onboarding, file upload, voice — remain fully functional
-
-This makes it easy to explore the app or develop locally without setting up a Supabase project.
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js installed
-- A Supabase project (or use demo mode without one)
-- A Google Gemini API key
-
-### Setup
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/eunoia.git
-cd eunoia/web
-
-# 2. Install dependencies
-npm install
-
-# 3. Configure environment variables
-cp .env.local.example .env.local
-# Edit .env.local with your Supabase and Gemini credentials
-
-# 4. Set up the database (if using Supabase)
-# Open supabase-migration.sql and run it in your Supabase SQL Editor
-
-# 5. Start the development server
-npm run dev
-```
-
-The app will be available at `http://localhost:3000`.
-
-### Other Commands
-
-```bash
-npm run build    # Production build
-npm run lint     # Run ESLint
-```
-
----
-
-## Environment Variables
-
-Create `web/.env.local` with the following variables:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-GOOGLE_GEMINI_API_KEY=your-gemini-api-key
-```
-
-| Variable | Where to find it | Required |
-|----------|-----------------|----------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase dashboard → Project Settings → API | No (demo mode if omitted) |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase dashboard → Project Settings → API | No (demo mode if omitted) |
-| `GOOGLE_GEMINI_API_KEY` | Google AI Studio | No (keyword fallback if omitted) |
-
-`GOOGLE_GEMINI_API_KEY` is server-side only and is never exposed to the browser.
-
----
-
-## Project Structure
-
-```
-eunoia/
-├── web/                        ← Next.js web application
-│   ├── public/                 ← Static assets (favicon, images)
-│   ├── src/
-│   │   ├── app/                ← Pages and API routes (App Router)
-│   │   ├── components/         ← React components
-│   │   └── lib/                ← Shared utilities and API clients
-│   ├── package.json
-│   └── tailwind.config.js
-├── mobile/                     ← Flutter mobile app (deferred)
-├── supabase-migration.sql      ← Database schema and RLS policies
-└── README.md
-```
-
----
 
 ## License
 
