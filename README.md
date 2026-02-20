@@ -30,28 +30,36 @@ Eunoia is an intelligent journaling platform that helps you understand your emot
 
 ## Features
 
-**Journal with instant AI insights**
+***Journal with instant AI insights***
+
 Write your thoughts and Eunoia immediately analyzes the emotional tone of each entry. Every entry gets a mood label, a sentiment score, and a personalized reflection to help you process what you wrote.
 
-**AI chat companion**
+***AI chat companion***
+
 Open the chat sidebar at any time for a supportive, judgment-free conversation. The AI listens, validates your feelings, and offers gentle coping strategies — drawing context from your journal history to make responses feel personal.
 
-**Mood tracking over time**
+***Mood tracking over time***
+
 Visual charts — a pie chart and a timeline — show how your emotions shift day to day and week to week, helping you spot patterns you might not notice on your own.
 
-**Weekly reflections**
+***Weekly reflections***
+
 Generate a weekly summary that identifies recurring emotional themes, highlights what you've been dealing with, and offers actionable tips tailored to your patterns.
 
-**Voice journaling**
+***Voice journaling***
+
 Don't feel like typing? Dictate your entries using the browser's built-in speech-to-text — no external service required.
 
-**Document import**
+***Document import***
+
 Drag and drop a PDF, text file, CSV, Markdown, JSON, or TSV file into the journal to analyze its emotional content. Useful for essays, therapy notes, survey responses, or any written material.
 
-**Onboarding questionnaire**
+***Onboarding questionnaire***
+
 On first sign-in, a short onboarding flow collects your occupation, age range, journaling purpose, and interests so the AI can tailor its tone and suggestions to you.
 
-**Dark mode**
+***Dark mode***
+
 Full dark mode support across every page and component.
 
 ---
