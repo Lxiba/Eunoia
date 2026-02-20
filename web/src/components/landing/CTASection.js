@@ -3,11 +3,11 @@ import Link from 'next/link';
 export default function CTASection() {
   return (
     <section className="py-20 px-4 sm:px-6">
-      <div className="mx-auto max-w-3xl rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-12 text-center shadow-xl">
-        <h2 className="text-3xl font-bold text-white sm:text-4xl">
+      <div className="mx-auto max-w-3xl rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-10 text-center shadow-xl sm:px-8 sm:py-12">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
           Ready to start your journey?
         </h2>
-        <p className="mx-auto mt-4 max-w-lg text-lg text-indigo-100">
+        <p className="mx-auto mt-4 max-w-lg text-base text-indigo-100 sm:text-lg">
           Join Eunoia and discover a more mindful way to understand your thoughts and emotions.
         </p>
         <Link

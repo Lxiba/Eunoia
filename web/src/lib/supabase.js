@@ -111,6 +111,12 @@ function createDemoClient() {
         setTimeout(notify, 0);
         return { data: { session }, error: null };
       },
+      signInWithOAuth: async ({ provider }) => {
+        // Demo mode: skip real OAuth redirect, sign in with a demo account immediately
+        session = { user: { ...DEMO_USER, email: `demo-${provider}@eunoia.local` } };
+        setTimeout(notify, 0);
+        return { data: { provider, url: null }, error: null };
+      },
       signOut: async () => {
         session = null;
         entries = [];

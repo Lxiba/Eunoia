@@ -61,11 +61,11 @@ export default function FeaturesSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
+              className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-900 sm:p-6"
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">

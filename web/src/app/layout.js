@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Eunoia</title>
         <meta name="description" content="AI-powered mental health journal with sentiment analysis" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </head>
       <body className="min-h-screen antialiased">

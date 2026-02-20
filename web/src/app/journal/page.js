@@ -112,7 +112,7 @@ export default function JournalPage() {
 
       <div className="flex flex-1">
         <main className="flex-1 overflow-y-auto">
-          <div className="mx-auto max-w-2xl px-4 py-8">
+          <div className="mx-auto max-w-2xl px-3 py-6 sm:px-4 sm:py-8">
             {/* Entry form */}
             <section aria-label="New journal entry" className="mb-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
               <EntryForm userId={user.id} onEntryCreated={handleEntryCreated} />

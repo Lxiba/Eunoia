@@ -109,7 +109,7 @@ export default function OnboardingModal({ userId, onComplete, onSkip }) {
       title: 'What is your age range?',
       subtitle: 'This stays private and helps us tailor content.',
       content: (
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
           {AGE_RANGES.map((range) => (
             <button
               key={range}

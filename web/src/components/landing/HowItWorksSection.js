@@ -15,9 +15,9 @@ export default function HowItWorksSection() {
           Three simple steps to a more mindful you.
         </p>
 
-        <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:gap-4">
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-4">
           {steps.map((step) => (
-            <div key={step.number} className="flex-1 rounded-xl bg-white p-6 shadow-sm dark:bg-gray-800">
+            <div key={step.number} className="flex-1 rounded-xl bg-white p-4 shadow-sm dark:bg-gray-800 sm:p-6">
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 text-lg font-bold text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-400">
                 {step.number}
               </div>

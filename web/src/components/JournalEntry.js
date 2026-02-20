@@ -70,7 +70,7 @@ export default function JournalEntry({ entry, onDeleted }) {
   const displayContent = isLong && !expanded ? entry.content.slice(0, 300) + '...' : entry.content;
 
   return (
-    <article className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+    <article className="overflow-hidden rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900">
       {/* Header */}
       <div className="mb-2 flex items-start justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
@@ -114,7 +114,7 @@ export default function JournalEntry({ entry, onDeleted }) {
       </div>
 
       {/* Content */}
-      <p className="whitespace-pre-wrap text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+      <p className="break-words whitespace-pre-wrap text-sm leading-relaxed text-gray-700 dark:text-gray-300">
         {displayContent}
       </p>
       {isLong && (

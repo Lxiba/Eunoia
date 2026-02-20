@@ -13,14 +13,14 @@ export default function HeroSection() {
           AI-Powered Mental Health Journal
         </span>
 
-        <h1 className="mx-auto max-w-3xl text-5xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
+        <h1 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-7xl">
           Your thoughts deserve{' '}
           <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">
             beautiful thinking
           </span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:mt-6 sm:text-lg">
           Eunoia helps you journal mindfully with AI-powered sentiment analysis
           and a compassionate chat companion that understands how you feel.
         </p>
@@ -41,7 +41,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mt-12 w-full max-w-lg" aria-hidden="true">
+      <div className="relative z-10 mt-8 w-full max-w-xs sm:mt-12 sm:max-w-lg" aria-hidden="true">
         <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <rect x="60" y="40" width="280" height="180" rx="8" className="fill-white stroke-gray-200 dark:fill-gray-800 dark:stroke-gray-700" strokeWidth="2"/>
           <line x1="200" y1="40" x2="200" y2="220" className="stroke-gray-300 dark:stroke-gray-600" strokeWidth="2"/>

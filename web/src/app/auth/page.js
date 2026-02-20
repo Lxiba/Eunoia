@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient, isDemoMode } from '../../lib/supabase';
 import AuthForm from '../../components/AuthForm';
@@ -65,7 +65,9 @@ export default function AuthPage() {
         </p>
       )}
 
-      <AuthForm />
+      <Suspense fallback={null}>
+        <AuthForm />
+      </Suspense>
     </main>
   );
 }

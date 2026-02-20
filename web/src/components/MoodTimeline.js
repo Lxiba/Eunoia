@@ -3,7 +3,7 @@
 export default function MoodTimeline({ entries }) {
   if (!entries || entries.length < 2) return null;
 
-  // Show last 14 entries (most recent on right)
+  // Show last 10 entries on mobile, 14 on wider screens — JS uses a fixed cap of 14
   const recent = entries.slice(0, 14).reverse();
 
   return (
@@ -34,7 +34,7 @@ export default function MoodTimeline({ entries }) {
               />
               {/* Date label (only show for some) */}
               {(i === 0 || i === recent.length - 1 || i === Math.floor(recent.length / 2)) && (
-                <span className="text-[10px] text-gray-400 dark:text-gray-500">{date}</span>
+                <span className="text-[9px] text-gray-400 dark:text-gray-500 sm:text-[10px]">{date}</span>
               )}
             </div>
           );

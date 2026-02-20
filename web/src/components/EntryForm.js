@@ -228,8 +228,8 @@ export default function EntryForm({ userId, onEntryCreated }) {
           aria-hidden="true"
         />
 
-        <span className="text-[10px] text-gray-400 dark:text-gray-500">
-          .txt .pdf .csv .md supported
+        <span className="text-xs text-gray-400 dark:text-gray-500">
+          .txt .pdf .csv .md
         </span>
       </div>
 
