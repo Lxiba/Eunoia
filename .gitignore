@@ -1,8 +1,5 @@
 node_modules/
 
-.claude/
-CLAUDE.md
-
 .env
 .env.local
 .env*.local
