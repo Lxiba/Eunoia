@@ -61,21 +61,12 @@ export default function EntryForm({ userId, onEntryCreated }) {
     setError(null);
 
     try {
-      // Client-side for plain text files
-      const name = file.name.toLowerCase();
-      if (name.endsWith('.txt') || name.endsWith('.md') || name.endsWith('.csv') || name.endsWith('.json') || name.endsWith('.tsv')) {
-        const text = await file.text();
-        if (!text.trim()) throw new Error('File appears to be empty');
-        setContent((prev) => (prev ? prev + '\n\n' : '') + text.trim());
-      } else {
-        // Server-side for PDFs and other formats
-        const formData = new FormData();
-        formData.append('file', file);
-        const res = await fetch('/api/parse-file', { method: 'POST', body: formData });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'Failed to parse file');
-        setContent((prev) => (prev ? prev + '\n\n' : '') + data.text);
-      }
+      const formData = new FormData();
+      formData.append('file', file);
+      const res = await fetch('/api/parse-file', { method: 'POST', body: formData });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to parse file');
+      setContent((prev) => (prev ? prev + '\n\n' : '') + data.text);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -222,7 +213,7 @@ export default function EntryForm({ userId, onEntryCreated }) {
         <input
           ref={fileInputRef}
           type="file"
-          accept=".txt,.md,.csv,.json,.tsv,.pdf"
+          accept=".txt,.md,.csv,.pdf"
           onChange={handleFileSelect}
           className="hidden"
           aria-hidden="true"

@@ -15,14 +15,14 @@ export async function POST(request) {
     if (name.endsWith('.txt') || name.endsWith('.md') || name.endsWith('.csv') || name.endsWith('.json') || name.endsWith('.tsv')) {
       text = await file.text();
     } else if (name.endsWith('.pdf')) {
-      const buffer = Buffer.from(await file.arrayBuffer());
-      // Dynamic import to avoid bundling issues
-      const pdfParse = (await import('pdf-parse')).default;
-      const data = await pdfParse(buffer);
-      text = data.text;
+      const { extractText, getDocumentProxy } = await import('unpdf');
+      const buffer = new Uint8Array(await file.arrayBuffer());
+      const pdf = await getDocumentProxy(buffer);
+      const { text: extracted } = await extractText(pdf, { mergePages: true });
+      text = extracted;
     } else {
       return NextResponse.json(
-        { error: 'Unsupported file type. Supported: .txt, .md, .csv, .json, .tsv, .pdf' },
+        { error: 'Unsupported file type. Supported: .txt, .md, .csv, .pdf' },
         { status: 400 }
       );
     }
@@ -31,7 +31,6 @@ export async function POST(request) {
       return NextResponse.json({ error: 'File appears to be empty' }, { status: 400 });
     }
 
-    // Truncate very long files to a reasonable size for journal entries
     const maxChars = 10000;
     if (text.length > maxChars) {
       text = text.slice(0, maxChars) + '\n\n[Content truncated — showing first 10,000 characters]';
