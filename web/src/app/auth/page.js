@@ -2,7 +2,7 @@
 
 import { useEffect, useState, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient, isDemoMode } from '../../lib/supabase';
+import { createClient } from '../../lib/supabase';
 import AuthForm from '../../components/AuthForm';
 import ThemeToggle from '../../components/ThemeToggle';
 import Link from 'next/link';
@@ -58,12 +58,6 @@ export default function AuthPage() {
           Your AI-powered thought journal
         </p>
       </div>
-
-      {isDemoMode() && (
-        <p className="mb-4 rounded-lg bg-amber-50 px-4 py-2 text-center text-xs text-amber-700 dark:bg-amber-900/20 dark:text-amber-400">
-          Demo mode — enter any email/password to try the app
-        </p>
-      )}
 
       <Suspense fallback={null}>
         <AuthForm />

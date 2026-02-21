@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { createClient, isDemoMode } from '../lib/supabase';
+import { createClient } from '../lib/supabase';
 
 export default function AuthForm() {
   const [email, setEmail] = useState('');
