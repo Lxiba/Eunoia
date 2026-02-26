@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 function ThemeInitializer({ children }) {
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         <ThemeInitializer>
           {children}
         </ThemeInitializer>
+        <Analytics />
       </body>
     </html>
   );
