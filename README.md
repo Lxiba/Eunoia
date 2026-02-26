@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="web/public/favicon.png" alt="Eunoia" width="80" height="80" />
-
+  <img src="web/public/favicon.png" alt="Eunoia" width="100" height="100" />
+  
 # Eunoia
 
  *Your AI-powered mental health journal — write freely, understand yourself deeply.*
