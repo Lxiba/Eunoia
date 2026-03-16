@@ -8,7 +8,6 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-0097f3?style=for-the-badge&logoColor=white)](https://eunoia-ai.vercel.app/)
 
 </div>
----
 
 Eunoia is an intelligent journaling platform that helps you understand your emotional patterns through AI. Write about your day, talk to a supportive AI companion, and watch your mood trends unfold over time — all in one place. The name *Eunoia* comes from the Greek word for "beautiful thinking," which is exactly what this app is designed to cultivate.
 
